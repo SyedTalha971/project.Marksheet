@@ -1,5 +1,6 @@
 #! /usr/bin/env node 
 import inquirer from "inquirer";
+import chalk from "chalk";
 let totalMarks = 500;
 let answer = await inquirer.prompt([
     {
@@ -30,48 +31,48 @@ let answer = await inquirer.prompt([
 ]);
 let totalNumbers = answer.biology + answer.chemistry + answer.physics + answer.math + answer.urdu;
 let percentage = totalNumbers / totalMarks * 100;
-console.log(`-----------------------------`);
-console.log(`-----------------------------`);
-console.log(`Your Biology Number is ${answer.biology}/100`);
-console.log(`Your Chemistry Number is ${answer.chemistry}/100`);
-console.log(`Your Physics Number is ${answer.physics}/100`);
-console.log(`Your Math Number is ${answer.math}/100`);
-console.log(`Your Urdu Number is ${answer.urdu}/100`);
-console.log(`-----------------------------`);
-console.log("Your Mark Sheet is generating");
-console.log("-----------------------------");
-console.log("-----------------------------");
-console.log("Your obtained marks is here");
-console.log(`Obtained Marks = ${totalNumbers} / ${totalMarks}`);
-console.log("-----------------------------");
-console.log("Your Percentage is here");
-console.log(`Your percentage = ${percentage}`);
-console.log("-----------------------------");
-console.log("Your Grade is here");
+console.log(chalk.blueBright(`-----------------------------`));
+console.log(chalk.blueBright(`-----------------------------`));
+console.log(chalk.green(`Your Biology Number is ${answer.biology}/100`));
+console.log(chalk.green(`Your Chemistry Number is ${answer.chemistry}/100`));
+console.log(chalk.green(`Your Physics Number is ${answer.physics}/100`));
+console.log(chalk.green(`Your Math Number is ${answer.math}/100`));
+console.log(chalk.green(`Your Urdu Number is ${answer.urdu}/100`));
+console.log(chalk.blueBright(`-----------------------------`));
+console.log(chalk.green("Your Mark Sheet is generating"));
+console.log(chalk.blueBright("-----------------------------"));
+console.log(chalk.blueBright("-----------------------------"));
+console.log(chalk.green("Your obtained marks is here"));
+console.log(chalk.green(`Obtained Marks = ${totalNumbers} / ${totalMarks}`));
+console.log(chalk.blueBright("-----------------------------"));
+console.log(chalk.green("Your Percentage is here"));
+console.log(chalk.green(`Your percentage = ${percentage}`));
+console.log(chalk.blueBright("-----------------------------"));
+console.log(chalk.green("Your Grade is here"));
 if (percentage >= 90) {
-    console.log(`Your grade is "A+1"`);
+    console.log(chalk.yellow(`Your grade is "A+1"`));
 }
 else if (percentage >= 80) {
-    console.log(`Your grade is "A1"`);
+    console.log(chalk.yellow(`Your grade is "A1"`));
 }
 else if (percentage >= 70) {
-    console.log(`Your grade is "A"`);
+    console.log(chalk.yellow(`Your grade is "A"`));
 }
 else if (percentage >= 60) {
-    console.log(`Your grade is "B"`);
+    console.log(chalk.yellow(`Your grade is "B"`));
 }
 else if (percentage >= 50) {
-    console.log(`Your grade is "C"`);
+    console.log(chalk.yellow(`Your grade is "C"`));
 }
 else if (percentage >= 40) {
-    console.log(`Your grade is "D"`);
+    console.log(chalk.yellow(`Your grade is "D"`));
 }
 else if (percentage >= 33) {
-    console.log(`Your grade is "E"`);
+    console.log(chalk.yellow(`Your grade is "E"`));
 }
 else {
-    console.log(`"You are Fail!"`);
+    console.log(chalk.redBright(`"You are Fail!"`));
 }
-console.log("-------------");
-console.log("by Syed Talha");
-console.log("-------------");
+console.log(chalk.blueBright("-------------"));
+console.log(chalk.yellowBright("by Syed Talha"));
+console.log(chalk.blueBright("-------------"));
